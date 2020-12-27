@@ -69,3 +69,9 @@
 (elfeed-org)
 (setq elfeed-db-directory "~/.elfeed")
 (setq rmh-elfeed-org-files (list "~/.doom.d/elfeed.org"))
+
+(use-package paren
+  :defer t
+  :ensure nil
+  :init (setq show-paren-delay 0.5)
+  :config (show-paren-mode +1))
