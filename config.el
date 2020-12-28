@@ -75,3 +75,8 @@
   :ensure nil
   :init (setq show-paren-delay 0.5)
   :config (show-paren-mode +1))
+
+;; Trying to get the path in emacs to work better, bodgy solution
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
+(setenv "PATH" (concat (getenv "PATH") ":/home/michael/.cargo/bin"))
