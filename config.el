@@ -30,7 +30,6 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/"
       display-line-numbers-type t
-      ;;doom-theme 'doom-one
       doom-theme 'doom-nord
       projectile-project-search-path '("~")
       projectile-auto-discover 1)
@@ -50,33 +49,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/org-basics/org-basics.org")))
- '(package-selected-packages (quote (evil-snipe))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:background "#21242b")))))
-
-
-(require 'elfeed-org)
-(elfeed-org)
-(setq elfeed-db-directory "~/.elfeed")
-(setq rmh-elfeed-org-files (list "~/.doom.d/elfeed.org"))
-
-(use-package paren
-  :defer t
-  :ensure nil
-  :init (setq show-paren-delay 0.5)
-  :config (show-paren-mode +1))
-
-;; Trying to get the path in emacs to work better, bodgy solution
-(require 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
-(setenv "PATH" (concat (getenv "PATH") ":/home/michael/.cargo/bin"))
